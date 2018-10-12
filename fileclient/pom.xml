@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.yesong</groupId>
-    <artifactId>consumer</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>fileclient</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>consumer</name>
+    <name>fileclient</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -25,14 +25,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>io.github.openfeign.form</groupId>
+            <artifactId>feign-form</artifactId>
+            <version>3.0.1</version>
         </dependency>
         <dependency>
             <groupId>io.github.openfeign.form</groupId>
             <artifactId>feign-form-spring</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
+            <version>3.0.1</version>
         </dependency>
     </dependencies>
 

@@ -10,6 +10,6 @@ public class Test {
     @RequestMapping(value = "test",method = RequestMethod.GET)
     public String test() throws Exception {
         //Thread.sleep(50000L);
-        return "hello";
+        throw new Exception("123");
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import java.rmi.ServerException;
+import java.util.ArrayList;
 
 @Swagger
 @RestController
@@ -38,5 +39,51 @@ public class TestControllerr {
     public void log() throws ServerException {
         log.info("日志打印");
         throw new ServerException("错误日志");
+    }
+
+    @RequestMapping(value = "info",method = RequestMethod.POST)
+    public CommonResponse<Address> info(@RequestBody String id){
+        CommonResponse<Address> addressCommonResponse = new CommonResponse<>();
+        if(id.equals("info")){
+            Address address = new Address();
+            address.setName("yesong");
+            address.setCity("hangzhou");
+            addressCommonResponse.setInfoResponse(address);
+        }else if(id.equals("list")){
+            ArrayList<Address> addresses = new ArrayList<>();
+            Address address = new Address();
+            address.setName("123");
+            address.setCity("456");
+            addresses.add(address);
+            Address address1 = new Address();
+            address1.setName("123");
+            address1.setCity("456");
+            addresses.add(address1);
+            addressCommonResponse.setListResponse(addresses);
+        }
+        return addressCommonResponse;
+    }
+
+    @RequestMapping(value = "list",method = RequestMethod.POST)
+    public CommonResponse<User> list(@RequestBody String id){
+        CommonResponse<User> addressCommonResponse = new CommonResponse<>();
+        if(id.equals("info")){
+            User address = new User();
+            address.setName("yesong");
+            address.setAddress("treggsfgd");
+            addressCommonResponse.setInfoResponse(address);
+        }else if(id.equals("list")){
+            ArrayList<User> addresses = new ArrayList<>();
+            User address = new User();
+            address.setName("123");
+            address.setAddress("456");
+            addresses.add(address);
+            User address1 = new User();
+            address1.setName("234");
+            address1.setAddress("567");
+            addresses.add(address1);
+            addressCommonResponse.setListResponse(addresses);
+        }
+        return addressCommonResponse;
     }
 }
